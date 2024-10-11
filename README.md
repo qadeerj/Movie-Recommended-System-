@@ -2,6 +2,9 @@
 
 This project is a Movie Recommender System built using Flask, SQLAlchemy, and The Movie Database (TMDb) API. The application allows users to register, log in, and receive movie recommendations based on a selected movie. The recommendations are generated using a content-based filtering approach.
 
+# Dataset
+The dataset used in this project can be obtained from https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata. Ensure to download the dataset and extract the required files to the project root directory.
+
 ## Features
 
 - **User Registration and Login**: Users can create an account and log in securely.
