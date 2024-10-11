@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        h2 {
+            text-align: center;
+            color: #495057;
+        }
+        h3 {
+            margin-top: 30px;
+            color: #495057;
+        }
+        a {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        p {
+            text-align: center;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <h1>User History</h1>
+    <h2>Welcome, {{ name }}</h2>
+    <a href="/recommend">Back to Recommendations</a>
+    
+    <h3>Your Movie History</h3>
+    {% if history %}
+        <ul>
+            {% for item in history %}
+                <li>{{ item.movie_title }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No history found.</p>
+    {% endif %}
+</body>
+</html>

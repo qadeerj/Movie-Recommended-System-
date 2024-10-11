@@ -1,0 +1,96 @@
+<!-- templates/contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7; /* Light background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 350px; /* Consistent width */
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 15px 0;
+            color: white;
+            font-size: 24px;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="text"], input[type="email"], textarea {
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-size: 14px;
+            outline: none;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: none; /* Disable resize for textarea */
+        }
+        input[type="text"]:focus, input[type="email"]:focus {
+            border-color: #2575fc; /* Focus border color */
+        }
+        button {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: linear-gradient(to right, #5b10b5, #1d63d1); /* Darker on hover */
+        }
+        .back-button {
+            margin-top: 20px;
+            background: linear-gradient(to right, #6a11cb, #2575fc); /* Match with form gradient */
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 100%; /* Full width */
+        }
+        .back-button:hover {
+            background: linear-gradient(to right, #5b10b5, #1d63d1); /* Darker on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Contact Us</h2>
+        <form method="POST">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" rows="5" placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <a href="{{ url_for('home') }}">
+            <button class="back-button">Back to Home</button>
+        </a>
+    </div>
+</body>
+</html>

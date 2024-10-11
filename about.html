@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0; /* Light background color */
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Full height of the viewport */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.6); /* Transparent black background */
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 40px;
+            max-width: 600px;
+            text-align: center; /* Center the text */
+            border-radius: 10px; /* Smooth corners */
+            color: #333; /* Dark text color */
+        }
+
+        .content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .content a {
+            display: inline-block;
+            padding: 12px 24px;
+            border: 2px solid #333;
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 5px;
+        }
+
+        .content a:hover {
+            background-color: #333;
+            color: white;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .content h1 {
+                font-size: 36px;
+            }
+
+            .content p {
+                font-size: 16px;
+            }
+
+            .content {
+                max-width: 90%; /* Adjust width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>About Us</h1>
+            <p>
+                Hello, I’m Muhammad Qadeer, a passionate Data Scientist with expertise in analyzing and interpreting complex data to drive impactful business decisions. With a solid foundation in statistics, machine learning, and data mining, I specialize in uncovering hidden insights from data and turning them into actionable strategies. 
+            </p>
+            <a href="/">Back To Home</a>
+        </div>
+    </div>
+</body>
+</html>

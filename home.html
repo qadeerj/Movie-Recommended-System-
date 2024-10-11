@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Header with Video</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* HEADER STYLING */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(to right, #f0f0f0, #fafafa);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 50px; 
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .menu-container {
+            position: relative;
+        }
+
+        .menu-icon {
+            width: 40px; 
+            cursor: pointer;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 50px; 
+            right: 0;
+            background-color: white;
+            border: 1px solid #ddd;
+            display: none; /* Initially hidden */
+            flex-direction: column;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1; /* Ensure dropdown is above other elements */
+        }
+
+        .dropdown-menu li {
+            list-style: none;
+        }
+
+        .dropdown-menu li a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* VIDEO STYLING */
+        .video-container {
+            position: relative;
+            width: 100%; /* Full width */
+            height: 600px; /* Height for the video */
+            overflow: hidden;
+            margin-top: 0; /* Removed space below the header */
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the container */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="static/images/logo.png" alt="Logo" class="logo">
+            <span class="title">Movie Recommend System</span>
+        </div>
+
+        <div class="menu-container">
+            <img src="static/images/menu.png" alt="Menu" class="menu-icon" id="menuIcon">
+            <ul class="dropdown-menu" id="dropdownMenu">
+                <li><a href="#">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/register">Register</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- VIDEO SECTION -->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="static/images/v.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        // Toggle dropdown menu visibility
+        const menuIcon = document.getElementById('menuIcon');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        menuIcon.addEventListener('click', () => {
+            // Toggle display of dropdown menu
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Close dropdown menu after clicking a link
+        const menuItems = dropdownMenu.querySelectorAll('li a');
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                dropdownMenu.style.display = 'none';
+            });
+        });
+    </script>
+    
+</body>
+</html>
